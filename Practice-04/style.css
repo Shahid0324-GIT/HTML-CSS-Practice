@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=BioRhyme:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --max-width: 1440px;
+  --neutral-100: #fff;
+  --primary-color: #ff7171;
+
+  --space-300: 1rem;
+  --space-400: 1.5rem;
+  --space-500: 2rem;
+  --space-600: 3rem;
+  --space-700: 4rem;
+  --space-800: 5rem;
+
+  --primary-ff: "Poppins";
+  --secondary--ff: "Ubuntu";
+  --links-ff: "Montserrat";
+
+  --fw-normal: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 600;
+  --fw-bolder: 700;
+
+  --fs-nav: 1.5rem;
+  --fs-primary-heading: 5rem;
+  --fs-text: 1.3rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrapper {
+  background: linear-gradient(to right, #fff7ad, #ffb1f1);
+}
+
+.nav {
+  background-color: var(--primary-color);
+  height: 5rem;
+}
+
+.nav-center {
+  margin: auto;
+  padding: var(--space-500);
+  max-width: var(--max-width);
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  font-weight: var(--fw-bold);
+  font-family: var(--links-ff);
+  font-size: var(--fs-nav);
+}
+
+.logo {
+  display: none;
+}
+
+.intro-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.text-container {
+  margin: auto 5rem;
+}
+
+.img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  display: none;
+}
+
+.primary-heading {
+  font-size: var(--fs-primary-heading);
+  font-family: var(--primary-ff);
+  line-height: 3;
+}
+
+.priamry-para {
+  font-size: var(--fs-text);
+  margin-bottom: 3rem;
+  font-family: var(--secondary--ff);
+  line-height: 1.5;
+}
+
+.button {
+  background: var(--primary-color);
+  border: none;
+  min-width: 50%;
+  max-width: 120px;
+  padding: var(--space-300);
+  font-size: var(--fs-text);
+  color: var(--neutral-100);
+  font-weight: 400;
+}
+
+.btm-wrapper {
+  max-width: var(--max-width);
+  padding: 10rem 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.img-grid-container {
+  display: grid;
+  gap: 1.5rem;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 240px 240px;
+}
+
+.image-2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.bottom-text-container {
+  background: var(--primary-color);
+  padding: var(--space-400);
+  margin-left: auto;
+}
+
+.btm-para {
+  font-family: var(--links-ff);
+  letter-spacing: 2px;
+  font-weight: var(--fw-semi-bold);
+  margin-bottom: var(--space-500);
+}
+
+.btm-heading {
+  font-family: var(--primary-ff);
+  max-width: 15ch;
+  font-size: 3rem;
+  letter-spacing: 5px;
+}
+
+.btm-btn-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+}
+
+.button-transparent {
+  background: transparent;
+  font-size: 1.2rem;
+  font-family: var(--secondary--ff);
+  border: none;
+  text-transform: capitalize;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.nav-btn {
+  display: none;
+}
+
+@media (max-width: 50em) {
+  .img,
+  .links {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #ff7171;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    transition: all ease 1s;
+    transform: translateX(-100%);
+  }
+
+  .sidebar-links a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    transition: all ease 0.6s;
+    display: inline-block;
+    letter-spacing: 4px;
+    margin: 1.5rem;
+    font-weight: 600;
+  }
+
+  .sidebar-links {
+    text-align: center;
+    font-family: var(--primary-ff);
+  }
+
+  .sidebar-links a:hover {
+    color: bisque;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #bb2525;
+  }
+
+  .close-btn:hover {
+    color: black;
+  }
+
+  .show-sidebar {
+    transform: translateX(0);
+  }
+
+  .intro-container {
+    padding: 1rem;
+    display: block;
+  }
+
+  .text-container {
+    margin: 2rem auto;
+  }
+
+  .primary-heading {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .priamry-para {
+    line-height: 1.3;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .btm-wrapper {
+    width: 96%;
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  .img-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-1 {
+    grid-column: 1 / 3;
+  }
+  .image-2 {
+    grid-column: 1 / 3;
+  }
+  .image-3 {
+    grid-column: 1 / 3;
+  }
+
+  .bottom-text-container {
+    width: 100%;
+    border: 1px solid red;
+  }
+
+  .btm-heading {
+    font-size: 2rem;
+  }
+
+  .nav-btn {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+
+  .logo {
+    font-family: var(--primary-ff);
+    font-size: 1.5rem;
+    display: block;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .intro-container {
+    display: block;
+    background-image: url("./images/pexels-robin-stickel-70497.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .overlay {
+    display: block;
+    background-color: black;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    opacity: 0.5;
+  }
+
+  .text-container {
+    position: absolute;
+    color: var(--neutral-100);
+    isolation: isolate;
+    z-index: 3;
+  }
+
+  .img {
+    display: none;
+  }
+
+  .img-grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 92%;
+  }
+
+  .image-1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  .image-2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  .image-3 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+  }
+
+  .btm-wrapper {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .bottom-text-container {
+    margin: auto;
+    width: 92%;
+  }
+}
